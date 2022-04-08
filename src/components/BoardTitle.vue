@@ -1,10 +1,12 @@
 <template>
-    <h1 class="p-6 shadow-lg">
-        <button class="title_clickable" v-show="!isEditable" @click="edit">{{ title }}</button>
-        <input type="text" :value="title" ref="inputRef" v-show="isEditable" v-on:keyup.enter="updateTitle">
-        <div class="btns" v-show="isEditable">
-            <button @click="updateTitle">v</button>
-            <button @click="exitEdit">x</button>
+    <h1 class="flex items-center">
+        <button class="font-sans text-3xl font-bold rounded-lg hover:bg-gray-500/10 px-3 py-2" v-show="!isEditable" @click="edit">
+            {{ title }}
+        </button>
+        <input class="font-sans text-3xl font-bold rounded-lg border-solid border-2 border-gray-200 px-3 py-2 mr-2" type="text" :value="title" ref="inputRef" v-show="isEditable" v-on:keyup.enter="updateTitle">
+        <div class="flex items-start" v-show="isEditable">
+            <button class="w-8 h-8 mr-1 rounded-full bg-green-500" @click="updateTitle">v</button>
+            <button class="w-8 h-8 rounded-full bg-red-400" @click="exitEdit">x</button>
         </div>
     </h1>
     
@@ -39,25 +41,3 @@ export default defineComponent({
     },
 })
 </script>
-
-<style scoped>
-/* .title {
-    display: flex;
-    align-items: flex-start;
-}
-
-.title_clickable {
-    background: none;
-    border-style: none;
-    outline: none;
-}
-
-.title_clickable:hover {
-    background: #cdcdcd;
-    cursor: pointer;
-}
-
-.title input {
-    padding: 10px 8px;
-} */
-</style>

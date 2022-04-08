@@ -1,5 +1,5 @@
 <template>
-    <p>{{ updateDate }}</p>
+    <p class="text-left px-3 py-2 text-sm">Last Modified : {{ updateDate }}</p>
 </template>
 
 <script lang="ts">
