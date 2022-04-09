@@ -7,21 +7,20 @@ export default defineComponent({
         Column,
     },
     setup() {
-        const getInitialBoard = (): Object[] => {
-            return new Array<Object>({pos: 0, title: 'Introduction'});
+        interface Column {
+            id: string,
         };
-        const columns = ref<Object[]>(getInitialBoard());
-
-        const updateTitle = ($event: Event, newTitle: string, pos: number) => {
-            
-        }
-        return {columns, updateTitle};
+        const getInitialBoard = (): Column[] => {
+            return new Array<Column>({id: '0'});
+        };
+        const columns = ref<Column[]>(getInitialBoard());
+        return {columns};
     },
 })
 </script>
 
 <template>
     <div class="rounded-md px-4 py-4 bg-gray-50">
-        <Column v-for="(col, index) in columns" :key="index" :data="col" @update="updateTitle($event, newTitle)" />
+        <Column v-for="col in columns" :key="col.id" :info="col" />
     </div>
 </template>
