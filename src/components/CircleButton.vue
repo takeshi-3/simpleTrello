@@ -1,16 +1,18 @@
 <template>
-    <button
-        @click="emitClickEvent"
-        v-if="buttonType === BUTTON_TYPES.OK"
-        class="transition rounded-full w-8 h-8 text-rose-600 hover:text-white hover:bg-rose-500">
-        v
-    </button>
-    <button
-        @click="emitClickEvent"
-        v-if="buttonType === BUTTON_TYPES.NO"
-        class="transition rounded-full w-8 h-8 text-white bg-cyan-600 hover:bg-cyan-600/50">
-        x
-    </button>
+    <div>
+        <button
+            @click="emitClickEvent"
+            v-if="buttonType === BUTTON_TYPES.OK"
+            class="transition rounded-full w-8 h-8 text-blue-600 hover:text-white hover:bg-blue-500">
+            v
+        </button>
+        <button
+            @click="emitClickEvent"
+            v-if="buttonType === BUTTON_TYPES.NO"
+            class="transition rounded-full w-8 h-8 text-white bg-rose-600 hover:bg-rose-600/50">
+            x
+        </button>
+    </div>
 </template>
 
 <script lang="ts">

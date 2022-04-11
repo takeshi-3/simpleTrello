@@ -7,10 +7,12 @@ import Board from './components/Board.vue'
 </script>
 
 <template>
-  <BoardTitle />
-  <ModifyDate />
+  <div class="px-4 py-8">
+    <BoardTitle />
+    <ModifyDate />
 
-  <Board />
+    <Board />
+  </div>
 </template>
 
 <style>

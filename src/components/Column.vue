@@ -83,8 +83,8 @@ export default defineComponent({
                 v-model="title"
                 class="mb-2 px-2 py-2 w-full rounded"
                 @keyup.enter="createColumn">
-            <div class="flex align-center justify-end">
-                <circle-button @_click="createColumn" :mode="BUTTON_TYPES.OK" />
+            <div class="flex items-center justify-end">
+                <circle-button class="mr-2" @_click="createColumn" :mode="BUTTON_TYPES.OK" />
                 <circle-button @_click="handleDeleteColumn" :mode="BUTTON_TYPES.NO" />
             </div>
         </div>

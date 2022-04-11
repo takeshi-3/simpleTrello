@@ -90,8 +90,8 @@ export default defineComponent({
                 >
                     x Delete Item
                 </button>
-                <div>
-                    <circle-button @_click="handleEdit(MODES.CHANGE)" :mode="BUTTON_TYPES.OK" />
+                <div class="flex items-center justify-end w-full">
+                    <circle-button class="mr-2" @_click="handleEdit(MODES.CHANGE)" :mode="BUTTON_TYPES.OK" />
                     <circle-button @_click="handleEdit(MODES.DISCARD)" :mode="BUTTON_TYPES.NO" />
                 </div>
             </div>

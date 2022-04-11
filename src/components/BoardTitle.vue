@@ -5,17 +5,22 @@
         </button>
         <input class="font-sans text-3xl font-bold rounded-lg border-solid border-2 border-gray-200 px-3 py-2 mr-2" type="text" :value="title" ref="inputRef" v-show="isEditable" v-on:keyup.enter="updateTitle">
         <div class="flex items-start" v-show="isEditable">
-            <button class="w-8 h-8 mr-1 rounded-full bg-green-500" @click="updateTitle">v</button>
-            <button class="w-8 h-8 rounded-full bg-red-400" @click="exitEdit">x</button>
+            <circle-button @_click="updateTitle" :mode="BUTTON_TYPES.OK" class="mr-2" />
+            <circle-button @_click="exitEdit" :mode="BUTTON_TYPES.NO" />
         </div>
     </h1>
     
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from 'vue';
+import CircleButton from './CircleButton.vue';
+import { BUTTON_TYPES } from '../modules/models';
 
 export default defineComponent({
+    components: {
+        CircleButton,
+    },
     setup() {
         const isEditable = ref<boolean>(false);
         const title = ref<string>('My Board');
@@ -36,7 +41,7 @@ export default defineComponent({
         }
 
         return {
-            isEditable, title, inputRef, edit, exitEdit, updateTitle
+            BUTTON_TYPES, isEditable, title, inputRef, edit, exitEdit, updateTitle
         }
     },
 })
