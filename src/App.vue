@@ -14,12 +14,18 @@ import Board from './components/Board.vue'
 </template>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  padding: 16px 8px;
+  height: 100%
+}
+
+html, body {
+  height: 100%;
+  box-sizing: border-box;
 }
 </style>
